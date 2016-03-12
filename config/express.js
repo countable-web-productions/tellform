@@ -32,16 +32,6 @@ module.exports = function(db) {
 	// Initialize express app
 	var app = express();
 
-	// Globbing model files
-	config.getGlobbedFiles('./app/models/**/*.js').forEach(function(modelPath) {
-		require(path.resolve(modelPath));
-	});
-
-	// Globbing routing files
-	config.getGlobbedFiles('./app/routes/**/*.js').forEach(function(routePath) {
-		require(path.resolve(routePath))(app);
-	});
-
 	// Setting application local variables
 	app.locals.title = config.app.title;
 	app.locals.description = config.app.description;
@@ -166,6 +156,16 @@ module.exports = function(db) {
 	// Should come before any other error middleware
 	app.use(raven.middleware.express.errorHandler(config.DSN));
 
+	// Globbing model files
+	config.getGlobbedFiles('./app/models/**/*.js').forEach(function(modelPath) {
+		require(path.resolve(modelPath));
+	});
+
+	// Globbing routing files
+	config.getGlobbedFiles('./app/routes/**/*.js').forEach(function(routePath) {
+		require(path.resolve(routePath))(app);
+	});
+
 	// Assume 'not found' in the error msgs is a 404. this is somewhat silly, but valid, you can do whatever you like, set properties, use instanceof etc.
 	app.use(function(err, req, res, next) {
 		// If the error object doesn't exists
@@ -204,6 +204,7 @@ module.exports = function(db) {
 		// Return HTTPS server instance
 		return httpsServer;
 	}
+
 
 	// Return Express server instance
 	return app;
