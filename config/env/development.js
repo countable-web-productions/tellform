@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	baseUrl: 'http://192.168.1.12:3000',
+	baseUrl: 'http://localhost:3000' || process.env.HOST,
 	db: {
 		uri: 'mongodb://db/mean-dev',
 		options: {
