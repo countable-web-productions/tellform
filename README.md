@@ -118,3 +118,14 @@ After you've generated the key and certificate, place them in the *config/sslcer
 ## Credits
 Inspired/built off the great work of the [MeanJS team](https://github.com/mean/).
 
+
+## With Docker
+```
+cp docker-compose.override.yml.template docker-compose.override.yml
+```
+
+edit your settings in the new overrides file you just copied.
+
+```
+docker-compose up
+```
