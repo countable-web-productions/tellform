@@ -155,11 +155,10 @@ angular.module('forms').directive('editFormDirective', ['$rootScope', 'FormField
                 */
 
                 // add new option to the field
-                $scope.addOption = function(field_index){
-                    var currField = $scope.myform.form_fields[field_index];
+                $scope.addOption = function(currField){
 
                     if(currField.fieldType === 'checkbox' || currField.fieldType === 'dropdown' || currField.fieldType === 'radio'){
-                        if(!currField.fieldOptions) $scope.myform.form_fields[field_index].fieldOptions = [];
+                        if(!currField.fieldOptions) currField.fieldOptions = [];
 
                         var lastOptionID = 0;
 
@@ -177,19 +176,18 @@ angular.module('forms').directive('editFormDirective', ['$rootScope', 'FormField
                         };
 
                         // put new option into fieldOptions array
-                        $scope.myform.form_fields[field_index].fieldOptions.push(newOption);
+                        currField.fieldOptions.push(newOption);
                     }
                 };
 
                 // delete particular option
-                $scope.deleteOption = function (field_index, option){
-                    var currField = $scope.myform.form_fields[field_index];
+                $scope.deleteOption = function (currField, option){
 
                     if(currField.fieldType === 'checkbox' || currField.fieldType === 'dropdown' || currField.fieldType === 'radio'){
                         for(var i = 0; i < currField.fieldOptions.length; i++){
                             if(currField.fieldOptions[i].option_id === option.option_id){
 
-                                $scope.myform.form_fields[field_index].fieldOptions.splice(i, 1);
+                                currField.fieldOptions.splice(i, 1);
                                 break;
 
                             }

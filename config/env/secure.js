@@ -39,7 +39,7 @@ module.exports = {
 		css: 'public/dist/application.min.css',
 		js: 'public/dist/application.min.js'
 	},
-	facebook: {
+	/*facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
 		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
 		callbackURL: 'https://localhost:443/auth/facebook/callback'
@@ -63,7 +63,7 @@ module.exports = {
 		clientID: process.env.GITHUB_ID || 'APP_ID',
 		clientSecret: process.env.GITHUB_SECRET || 'APP_SECRET',
 		callbackURL: 'https://localhost:443/auth/github/callback'
-	},
+	},*/
 	mailer: {
 		from: process.env.MAILER_FROM || '',
 		options: {

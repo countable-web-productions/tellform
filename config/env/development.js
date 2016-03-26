@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	baseUrl: 'http://localhost:3000',
+	baseUrl: 'http://192.168.1.12:3000',
 	db: {
 		uri: 'mongodb://db/mean-dev',
 		options: {
@@ -21,7 +21,7 @@ module.exports = {
 	app: {
 		title: 'TellForm'
 	},
-	facebook: {
+	/*facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
 		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
 		callbackURL: '/auth/facebook/callback'
@@ -45,7 +45,7 @@ module.exports = {
 		clientID: process.env.GITHUB_ID || 'APP_ID',
 		clientSecret: process.env.GITHUB_SECRET || 'APP_SECRET',
 		callbackURL: '/auth/github/callback'
-	},
+	},*/
 	mailer: {
 		from: process.env.MAILER_FROM || 'no-reply@tellform.com',
 		options: {

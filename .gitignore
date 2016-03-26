@@ -75,3 +75,7 @@ build/
 coverage/
 coverageServer/
 coverageClient/
+
+#Docker
+# =====
+docker-compose.override.yml

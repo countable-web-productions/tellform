@@ -45,6 +45,11 @@ $ npm install
 $ bower install
 ```
 
+Create this directory or you will get errors.
+```
+mkdir uploads/pdfs
+```
+
 Setup environment.
 ```bash
 $ grunt build

@@ -42,6 +42,7 @@ var config_nev = function () {
 	        text: 'Your account has been successfully verified.'
 	    },
 	    verifySendMailCallback: function(err, info) {
+	    	console.log("######################", info)
 	      if (err) {
 	        throw err;
 	      } else {
